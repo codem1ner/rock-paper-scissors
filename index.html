@@ -30,8 +30,8 @@
     function playGame() {
       let user = prompt("Enter rock, paper, or scissors").toLowerCase(); // Get user's choice and convert it to lowercase
       let compArray = ["rock", "paper", "scissors"]; // Array of possible choices for computer
-      let randomNumber = Math.floor(Math.random() * 3) + 1;   // Generate a randoms between 1 and 3 for computer's choice
-      let comp = compArray[randomNumber - 1]; // Store computer's choice from compArray using random index
+      let randomNumber = Math.floor(Math.random() * 3);   // Generate randoms from 0 - 2 for computer choice
+      let comp = compArray[randomNumber]; // Store computer's choice from compArray using random index
       console.log("User: " + user); 
       console.log("Computer: " + comp); 
       whoWins(user, comp); // Pass user and computer choices to whoWins
