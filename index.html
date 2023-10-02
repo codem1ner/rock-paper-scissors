@@ -10,18 +10,9 @@
 <body>
 
  <script>
-   // Function to determine the winner of the rock-paper-scissors game
-   function whoWins() {
-     let user = prompt("Enter rock, paper, or scissors"); // Get user's choice
-     let compArray = ["rock", "paper", "scissors"]; // Array of possible choices for computer
-     let randomNumber = Math.floor(Math.random() * 3) + 1;      // Generate a randoms between 1 and 3 for computer's choice
-     let comp = compArray[randomNumber - 1]; // Store computer's choice from compArray using random index
  
-     // Print the user's choice and the computer's choice to the console
-     console.log("User: " + user);
-     console.log("Computer: " + comp);
- 
-     // Check the different combinations of choices to determine the winner
+    // Check different combinations of choices to determine winner
+    function whoWins(user, comp) {    
      if (user === "rock" && comp === "scissors") {
        console.log("Rock beats scissors, User wins");
      } else if (user === "scissors" && comp === "paper") {
@@ -35,16 +26,26 @@
      } else if (user === "rock" && comp === "paper") {
        console.log("Paper beats rock, Comp wins");
      } else if (user === "rock" && comp === "rock") {
-       console.log("Rock beats rock, Draw");
+       console.log("Rock matches rock, Draw");
      } else if (user === "paper" && comp === "paper") {
-       console.log("Paper beats paper, Draw");
+       console.log("Paper matches paper, Draw");
      } else if (user === "scissors" && comp === "scissors") {
-       console.log("Scissors beats scissors, Draw");
+       console.log("Scissors matches scissors, Draw");
      }
-   }
+    }
  
-   // Call the whoWins function to start the game
-   whoWins();
+    // Plays the game: User picks, computer picks, and winner is determined by whoWins
+    function playGame() {
+      let user = prompt("Enter rock, paper, or scissors"); // Get user's choice
+      let compArray = ["rock", "paper", "scissors"]; // Array of possible choices for computer
+      let randomNumber = Math.floor(Math.random() * 3) + 1;      // Generate a randoms between 1 and 3 for computer's choice
+      let comp = compArray[randomNumber - 1]; // Store computer's choice from compArray using random index
+      console.log("User: " + user); // Print the user's choice to the console
+      console.log("Computer: " + comp); // Print the computer's choice to the console
+      whoWins(comp, user);
+    }
+   
+    playGame(); // Call the playGame function
  </script>
 
 </body>
