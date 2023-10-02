@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+ <script>
+   // Function to determine the winner of the rock-paper-scissors game
+   function whoWins() {
+     let user = prompt("Enter rock, paper, or scissors");
+ 
+     // Array of possible choices for the computer
+     let compArray = ["rock", "paper", "scissors"];
+ 
+     // Generate a random number between 1 and 3 to represent the computer's choice
+     let randomNumber = Math.floor(Math.random() * 3) + 1;
+ 
+     // Get the computer's choice from the compArray using the random number
+     let comp = compArray[randomNumber - 1];
+ 
+     // Print the user's choice and the computer's choice to the console
+     console.log("User: " + user);
+     console.log("Computer: " + comp);
+ 
+     // Check the different combinations of choices to determine the winner
+     if (user === "rock" && comp === "scissors") {
+       console.log("Rock beats scissors, User wins");
+     } else if (user === "scissors" && comp === "paper") {
+       console.log("Scissors beats paper, User wins");
+     } else if (user === "paper" && comp === "rock") {
+       console.log("Paper beats rock, User wins");
+     } else if (user === "scissors" && comp === "rock") {
+       console.log("Rock beats scissors, Comp wins");
+     } else if (user === "paper" && comp === "scissors") {
+       console.log("Scissors beats paper, Comp wins");
+     } else if (user === "rock" && comp === "paper") {
+       console.log("Paper beats rock, Comp wins");
+     } else if (user === "rock" && comp === "rock") {
+       console.log("Rock beats rock, Draw");
+     } else if (user === "paper" && comp === "paper") {
+       console.log("Paper beats paper, Draw");
+     } else if (user === "scissors" && comp === "scissors") {
+       console.log("Scissors beats scissors, Draw");
+     }
+   }
+ 
+   // Call the whoWins function to start the game
+   whoWins();
+ </script>
+
+</body>
+
+</html>
