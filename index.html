@@ -12,16 +12,10 @@
  <script>
    // Function to determine the winner of the rock-paper-scissors game
    function whoWins() {
-     let user = prompt("Enter rock, paper, or scissors");
- 
-     // Array of possible choices for the computer
-     let compArray = ["rock", "paper", "scissors"];
- 
-     // Generate a random number between 1 and 3 to represent the computer's choice
-     let randomNumber = Math.floor(Math.random() * 3) + 1;
- 
-     // Get the computer's choice from the compArray using the random number
-     let comp = compArray[randomNumber - 1];
+     let user = prompt("Enter rock, paper, or scissors"); // Get user's choice
+     let compArray = ["rock", "paper", "scissors"]; // Array of possible choices for computer
+     let randomNumber = Math.floor(Math.random() * 3) + 1;      // Generate a randoms between 1 and 3 for computer's choice
+     let comp = compArray[randomNumber - 1]; // Store computer's choice from compArray using random index
  
      // Print the user's choice and the computer's choice to the console
      console.log("User: " + user);
